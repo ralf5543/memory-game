@@ -1,0 +1,26 @@
+{
+  "name": "memory-game",
+  "version": "1.0.0",
+  "description": "Memory game package",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ralf5543/memory-game.git"
+  },
+  "author": "Raphaël Bigot",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ralf5543/memory-game/issues"
+  },
+  "homepage": "https://github.com/ralf5543/memory-game#readme",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-postcss": "^8.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-util": "^3.0.8"
+  }
+}

@@ -1,0 +1,24 @@
+body {
+  max-width: 1280px;
+  margin: auto;
+  font-family: $mainFont;
+
+  @media($tablet) {
+    padding: $space-s;
+  }
+
+  @media($desktop) {
+    padding: $space-m;
+  }
+}
+
+.u-hiddenWording {
+	@include accessible-invisibility;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    height: 32px;
+    width: 32px;
+    display: inline-block;
+    fill: currentColor;
+}

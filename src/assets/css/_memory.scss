@@ -1,10 +1,45 @@
 .cards {
-	display: grid;
-	grid-template-columns: 200px 200px 200px 200px;
-  	grid-template-rows: 200px 200px 200px 200px;
+    //display: flex;
+    flex-wrap: wrap;
+	    justify-content: center;
+    position: relative;
+    margin-right: -$space-s;
+
+    display: grid;
+  grid-template-columns: repeat(4, calc(25vw - #{$space-s}));
+  grid-template-rows: repeat(4, calc(25vw - #{$space-s}));
+
+    @media ($tablet) {
+    	margin-right: -$space-m;
+    	grid-template-columns: repeat(4, calc(25vw - #{$space-m}));
+  grid-template-rows: repeat(4, calc(25vw - #{$space-m}));
+    }
+
+    @media ($desktop) {
+    	margin-right: -$space-l;
+    	grid-template-columns: repeat(4, calc(264px - #{$space-l}));
+  grid-template-rows: repeat(4, calc(264px - #{$space-l}));
+    }
 }
 
 .card {
+	display: flex;
+	margin: 0 $space-s $space-s 0;
 	border: 2px solid red;
+	border-radius: 15%;
 	font-size: 5rem;
+    position: relative;
+
+    @media ($tablet) {
+    	margin: 0 $space-m $space-m 0;
+    }
+
+    @media ($desktop) {
+    	margin: 0 $space-l $space-l 0;
+    }
+}
+
+.card__button {
+	width: 100%;
+	border: 1px solid blue;
 }

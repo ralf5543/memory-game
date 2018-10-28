@@ -325,7 +325,8 @@ input::-webkit-inner-spin-button {
 body {
   max-width: 1280px;
   margin: auto;
-  font-family: "roboto", Arial, sans-serif; }
+  font-family: "roboto", Arial, sans-serif;
+  overflow-x: hidden; }
   @media (min-width: 769px) {
     body {
       padding: 8px; } }
@@ -348,10 +349,38 @@ body {
 
 /* the css for the website itself */
 .cards {
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+  margin-right: -8px;
   display: grid;
-  grid-template-columns: 200px 200px 200px 200px;
-  grid-template-rows: 200px 200px 200px 200px; }
+  grid-template-columns: repeat(4, calc(25vw - 8px));
+  grid-template-rows: repeat(4, calc(25vw - 8px)); }
+  @media (min-width: 769px) {
+    .cards {
+      margin-right: -16px;
+      grid-template-columns: repeat(4, calc(25vw - 16px));
+      grid-template-rows: repeat(4, calc(25vw - 16px)); } }
+  @media (min-width: 1024px) {
+    .cards {
+      margin-right: -32px;
+      grid-template-columns: repeat(4, calc(264px - 32px));
+      grid-template-rows: repeat(4, calc(264px - 32px)); } }
 
 .card {
+  display: flex;
+  margin: 0 8px 8px 0;
   border: 2px solid red;
-  font-size: 5rem; }
+  border-radius: 20%;
+  font-size: 5rem;
+  position: relative; }
+  @media (min-width: 769px) {
+    .card {
+      margin: 0 16px 16px 0; } }
+  @media (min-width: 1024px) {
+    .card {
+      margin: 0 32px 32px 0; } }
+
+.card__button {
+  width: 100%;
+  border: 1px solid blue; }

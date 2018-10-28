@@ -2,6 +2,7 @@ body {
   max-width: 1280px;
   margin: auto;
   font-family: $mainFont;
+      overflow-x: hidden;
 
   @media($tablet) {
     padding: $space-s;

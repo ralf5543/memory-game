@@ -43,6 +43,10 @@ let counter = document.querySelector('.counterNumber');
 
 const pickCard = function(e) {
   const _this = e.target;
+
+  //the li containing the button toggles a class to "return" visually the card
+  _this.parentNode.classList.toggle('is-revealed');
+
   //we store the card in the array
   chosenCards.push(_this);
   // we prevent from chosing again that card
@@ -55,9 +59,11 @@ const pickCard = function(e) {
       score ++;
     } else {
       console.log('try again...');
-      //If not, the 2 cards are selectable for a new try
+      //If not, the 2 cards are selectable for a new try...
       for (let chosenCard of chosenCards) {
         chosenCard.addEventListener('click', pickCard);
+        //...and they're returned after 3s
+        setTimeout(function (){chosenCard.parentNode.classList.toggle('is-revealed')}, 3000);
       }
     } // and the array is empty
       chosenCards = [];

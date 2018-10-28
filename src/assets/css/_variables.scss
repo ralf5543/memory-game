@@ -1,11 +1,9 @@
 /* ==================--------------- COLORS ---------------================== */
 $primaryColor: rgb(55, 57, 66);// used for main text
-$secondaryColor: rgb(0, 194, 154);// used for interactive elements
-$darkBg: rgb(42, 44, 49);// main background for dark elements
-$lightBg: rgb(75, 77, 85);// slightly less dark background
-$lightestBg: rgb(120, 123, 135);// when you need an hover state for darker colors
-$lightestColor: rgb(255, 255, 255);// mainly used on text in dark components ($darkBg)
+$secondaryColor: #02b3e4;// used for interactive elements
+$lightestColor: white;// mainly used on text in dark components ($darkBg)
 $fog: rgba(0, 0, 0, .1);// overlays some blocks
+$shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
 
 /* ==================--------------- WHITE SPACES ---------------================== */
 $space-xs: 4px;

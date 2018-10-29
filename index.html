@@ -1,47 +1,166 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Memory Game -Udacity Project</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game -Udacity Project</title>
 
-	<link rel="stylesheet" href="dist/assets/css/styles.css">
+    <link rel="stylesheet" href="dist/assets/css/styles.css">
 
 </head>
 <body>
-	
-	<h1 class="mainTitle">Memory Game</h1>
-	<p class="counter">Move counter : 
-		<span class="counterNumber">0</span>
-	</p>
-	<ul class="cards">
-		<li class="card">
-			<button class="card__button">A</button>
-		</li>
-		<li class="card">
-			<button class="card__button">A</button>
-		</li>
-		<li class="card">
-			<button class="card__button">B</button>
-		</li>
-		<li class="card">
-			<button class="card__button">B</button>
-		</li>
-		<li class="card"><button class="card__button">C</button></li>
-		<li class="card"><button class="card__button">C</button></li>
-		<li class="card"><button class="card__button">D</button></li>
-		<li class="card"><button class="card__button">D</button></li>
-		<li class="card"><button class="card__button">E</button></li>
-		<li class="card"><button class="card__button">E</button></li>
-		<li class="card"><button class="card__button">F</button></li>
-		<li class="card"><button class="card__button">F</button></li>
-		<li class="card"><button class="card__button">G</button></li>
-		<li class="card"><button class="card__button">G</button></li>
-		<li class="card"><button class="card__button">H</button></li>
-		<li class="card"><button class="card__button">H</button></li>
-	</ul>
 
-<button class="reset">RESET</button>
+<header class="mainHeader">
+    <h1 class="mainTitle">Memory Game</h1>
+    <div class="mainHeader__inner">
+        <p class="stars">dfgfd</p>
+        <p class="counter">
+            <span class="counterNumber">0</span>
+            moves
+        </p>
+        <button class="reset js-reset">
+            <img class="reset__icon" src="src/assets/img/reload.svg" alt="reset game">
+        </button>
+    </div>
+</header>
+<ul class="cards">
+    <li class="card">
+        <button class="card__button">
+            <span class="u-hiddenWording">cow</span>
+            <img class="card__image"
+                 sizes="25vw"
+                 src="dist/assets/img/cow-original.jpg"
+                 srcset="dist/assets/img/cow-200px.jpg 200w,
+                         dist/assets/img/cow-200px_2x.jpg 400w,
+                         dist/assets/img/cow-200px_3x.jpg 600w,
+						dist/assets/img/cow-300px.jpg 300w,
+						dist/assets/img/cow-300px_2x.jpg 600w"
+                 alt="Appify illustration"
+            >
+        </button>
+    </li>
+    <li class="card">
+        <button class="card__button">
+            <span class="u-hiddenWording">cow</span>
+            <img class="card__image"
+                 sizes="25vw"
+                 src="dist/assets/img/cow-original.jpg"
+                 srcset="dist/assets/img/cow-200px.jpg 200w,
+                         dist/assets/img/cow-200px_2x.jpg 400w,
+                         dist/assets/img/cow-200px_3x.jpg 600w,
+						dist/assets/img/cow-300px.jpg 300w,
+						dist/assets/img/cow-300px_2x.jpg 600w"
+                 alt="Appify illustration"
+            >
+        </button>
+    </li>
+    <li class="card">
+        <button class="card__button">
+            <span class="u-hiddenWording">koala</span>
+            <img class="card__image"
+                 sizes="25vw"
+                 src="dist/assets/img/koala-original.jpg"
+                 srcset="dist/assets/img/koala-200px.jpg 200w,
+                         dist/assets/img/koala-200px_2x.jpg 400w,
+                         dist/assets/img/koala-200px_3x.jpg 600w,
+						dist/assets/img/koala-300px.jpg 300w,
+						dist/assets/img/koala-300px_2x.jpg 600w,
+						dist/assets/img/koala-300px_2x.jpg 600w"
+                 alt="Appify illustration"
+            >
+        </button>
+    </li>
+    <li class="card">
+        <button class="card__button">
+            <span class="u-hiddenWording">koala</span>
+            <img class="card__image"
+                 sizes="25vw"
+                 src="dist/assets/img/koala-original.jpg"
+                 srcset="dist/assets/img/koala-200px.jpg 200w,
+                         dist/assets/img/koala-200px_2x.jpg 400w,
+                         dist/assets/img/koala-200px_3x.jpg 600w,
+						dist/assets/img/koala-300px.jpg 300w,
+						dist/assets/img/koala-300px_2x.jpg 600w,
+						dist/assets/img/koala-300px_2x.jpg 600w"
+                 alt="Appify illustration"
+            >
+        </button>
+    </li>
+    <li class="card">
+        <button class="card__button">
+            <span class="u-hiddenWording">crocodile</span>
+            <img class="card__image"
+                 sizes="25vw"
+                 src="dist/assets/img/crocodile-original.jpg"
+                 srcset="dist/assets/img/crocodile-200px.jpg 200w,
+                         dist/assets/img/crocodile-200px_2x.jpg 400w,
+                         dist/assets/img/crocodile-200px_3x.jpg 600w,
+						dist/assets/img/crocodile-300px.jpg 300w,
+						dist/assets/img/crocodile-300px_2x.jpg 600w,
+						dist/assets/img/crocodile-300px_2x.jpg 600w"
+                 alt="Appify illustration"
+            >
+        </button>
+    </li>
+    <li class="card">
+        <button class="card__button">
+            <span class="u-hiddenWording">crocodile</span>
+            <img class="card__image"
+                 sizes="25vw"
+                 src="dist/assets/img/crocodile-original.jpg"
+                 srcset="dist/assets/img/crocodile-200px.jpg 200w,
+                         dist/assets/img/crocodile-200px_2x.jpg 400w,
+                         dist/assets/img/crocodile-200px_3x.jpg 600w,
+						dist/assets/img/crocodile-300px.jpg 300w,
+						dist/assets/img/crocodile-300px_2x.jpg 600w,
+						dist/assets/img/crocodile-300px_2x.jpg 600w"
+                 alt="Appify illustration"
+            >
+        </button>
+    </li>
+    <li class="card">
+        <button class="card__button">D</button>
+    </li>
+    <li class="card">
+        <button class="card__button">D</button>
+    </li>
+    <li class="card">
+        <button class="card__button">E</button>
+    </li>
+    <li class="card">
+        <button class="card__button">E</button>
+    </li>
+    <li class="card">
+        <button class="card__button">F</button>
+    </li>
+    <li class="card">
+        <button class="card__button">F</button>
+    </li>
+    <li class="card">
+        <button class="card__button">G</button>
+    </li>
+    <li class="card">
+        <button class="card__button">G</button>
+    </li>
+    <li class="card">
+        <button class="card__button">H</button>
+    </li>
+    <li class="card">
+        <button class="card__button">H</button>
+    </li>
+</ul>
+
+<div class="modal is-closed js-modal">
+    <div class="modal__inner">
+        <button class="modal__closer js-closeModal">
+            <span class="u-hiddenWording">Close</span>
+        </button>
+        <h3 class="modal__title">Congratulations ! You won !</h3>
+        <p class="modal__text">With <span class="modal__text__moves">0</span> moves and <span class="modal__text__stars">5</span> star<span class="modal__text__starsPlural"></span>.</p>
+        <p class="modal__text">Wooooooo !</p>
+        <button class="modal__btn js-reset js-closeModal">Play again !</button>
+    </div>
+</div>
 
 <script type="text/javascript" src="src/assets/js/memory.js"></script>
 </body>

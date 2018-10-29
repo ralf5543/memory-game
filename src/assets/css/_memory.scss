@@ -1,59 +1,222 @@
-.cards {
-    //display: flex;
-    flex-wrap: wrap;
-	    justify-content: center;
-    position: relative;
-    margin-right: -$space-s;
+// =============================------------------------- HEADER -------------------------=============================
 
-    display: grid;
+.mainHeader {
+  margin-bottom: $space-s;
+
+  @media ($tablet) {
+    margin-bottom: $space-m;
+  }
+}
+
+.mainTitle {
+  font-size: 3rem;
+  font-weight: normal;
+  text-align: center;
+  margin-bottom: $space-s;
+
+  @media ($tablet) {
+    margin-bottom: $space-m;
+  }
+
+  @media ($desktop) {
+    margin-bottom: $space-l;
+  }
+}
+
+.mainHeader__inner {
+  display: flex;
+  justify-content: space-around;
+}
+
+.counter {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+.reset__icon {
+  width: 24px;
+}
+
+// =============================------------------------- Cards -------------------------=============================
+
+.cards {
+  display: grid;
   grid-template-columns: repeat(4, calc(25vw - #{$space-s}));
   grid-template-rows: repeat(4, calc(25vw - #{$space-s}));
+  margin: 0 auto;
 
-    @media ($tablet) {
-    	margin-right: -$space-m;
-    	grid-template-columns: repeat(4, calc(25vw - #{$space-m}));
-  grid-template-rows: repeat(4, calc(25vw - #{$space-m}));
-    }
+  @media ($tablet) {
+    grid-template-columns: repeat(4, calc(25vw - #{$space-m}));
+    grid-template-rows: repeat(4, calc(25vw - #{$space-m}));
+  }
 
-    @media ($desktop) {
-    	margin-right: -$space-l;
-    	grid-template-columns: repeat(4, calc(264px - #{$space-l}));
-  grid-template-rows: repeat(4, calc(264px - #{$space-l}));
-    }
+  @media ($desktop) {
+    grid-template-columns: repeat(4, calc(264px - #{$space-l}));
+    grid-template-rows: repeat(4, calc(264px - #{$space-l}));
+  }
 }
 
 .card {
-	display: flex;
-	margin: 0 $space-s $space-s 0;
-	font-size: 5rem;
-    position: relative;
-    //background-image: url(../../../src/assets/img/udacity-logo.svg) no-repeat center center;
-    //background-color: linear-gradient(to bottom, rgba(2,179,228,1) 0%,rgba(2,136,219,1) 100%);
-    //background-size: 30%;
-    background: url(../../../src/assets/img/udacity-logo.svg) 30%, linear-gradient(to bottom, rgba(2,179,228,1) 0%,rgba(2,136,219,1) 100%);
-    background-size: 30%, 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-    border-radius: 15%;
-    box-shadow: 3px 3px 6px -3px rgba(0, 0, 0, 1);
-    border: $space-xs solid $lightestColor;
-    transition: transform .3s, box-shadow .3s;
+  display: flex;
+  margin: 0 $space-xs $space-s;
+  font-size: 5rem;
+  position: relative;
+  background: url(../../../src/assets/img/udacity-logo.svg) 30%, linear-gradient(to bottom, $secondaryColor 0%, $secondaryColorAlt 100%);
+  background-size: 30%, 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 15%;
+  box-shadow: 3px 3px 6px -3px rgba(0, 0, 0, 1);
+  border: $space-xs solid $lightestColor;
+  overflow: hidden;
+  transition: transform .3s, box-shadow .3s;
 
-    @media ($tablet) {
-    	margin: 0 $space-m $space-m 0;
-    	border-width: $space-s;
-    }
+  @media ($tablet) {
+    margin: 0 $space-s $space-m;
+    border-width: $space-s;
+  }
 
-    @media ($desktop) {
-    	margin: 0 $space-l $space-l 0;
-    }
+  @media ($desktop) {
+    margin: 0 $space-m $space-l;
+  }
 
-    &:hover {
-    	transform: scale(1.1);
-	    box-shadow: 3px 3px 16px -3px rgba(0, 0, 0, 0.75);
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 3px 3px 16px -3px rgba(0, 0, 0, 0.75);
+  }
+
+  &.is-revealed {
+    transform: rotateY(180deg);
+
+    .card__image {
+      opacity: 1;
+      transition: opacity 0s;
+      transition-delay: .15s;
     }
+  }
+
+  &.is-correct {
+    border-color: $success;
+  }
+
+  &.is-wrong {
+    border-color: $fail;
+  }
 }
 
 .card__button {
-	width: 100%;
+  position: relative;
+  width: 100%;
+}
+
+.card__image {
+  @include center-both;
+  width: 100%;
+  height: auto;
+  opacity: 0;
+}
+
+// =============================------------------------- MODAL -------------------------=============================
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  background-color: $fog;
+
+  &.is-closed {
+    display: none;
+  }
+}
+
+.modal__inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  padding: $space-s;
+  text-align: center;
+  background-color: $lightestColor;
+
+  @media ($tablet) {
+    width: 75%;
+    height: auto;
+    min-height: 400px;
+    padding: $space-m;
+  }
+
+  @media ($desktop) {
+    width: 50%;
+    padding: $space-l;
+  }
+}
+
+.modal__closer {
+  position: absolute;
+  top: $space-m;
+  right: $space-m;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid $primaryColor;
+  transform: rotate(45deg);
+  transition: transform .3s;
+
+  &::before,
+  &::after {
+    @include center-both;
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 2px;
+    background-color: $primaryColor;
+
+    @media ($tablet) {
+      background-color: $lightestColor;
+    }
+  }
+
+  &::after {
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+
+  &:hover {
+    transform: rotate(135deg);
+  }
+
+  @media ($tablet) {
+    top: -40px;
+    right: -40px;
+    border: 2px solid $lightestColor;
+  }
+}
+
+.modal__title {
+  margin-bottom: $space-m;
+  font-size: 3rem;
+  font-weight: 100;
+}
+
+.modal__text {
+  font-size: 1.6rem;
+  margin-bottom: $space-s;
+}
+
+.modal__btn {
+  padding: $space-m $space-l;
+  background-color: $secondaryColor;
+  color: $lightestColor;
+  margin-top: $space-m;
+  font-size: 1.4rem;
+  transition: background-color .3s;
+
+  &:hover {
+    background-color: $secondaryColorAlt;
+  }
 }

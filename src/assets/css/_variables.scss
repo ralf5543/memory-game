@@ -1,9 +1,12 @@
 /* ==================--------------- COLORS ---------------================== */
-$primaryColor: rgb(55, 57, 66);// used for main text
-$secondaryColor: #02b3e4;// used for interactive elements
-$lightestColor: white;// mainly used on text in dark components ($darkBg)
-$fog: rgba(0, 0, 0, .1);// overlays some blocks
+$primaryColor: rgb(55, 57, 66);
+$secondaryColor: #02b3e4;
+$secondaryColorAlt: rgba(2, 136, 219, 1);
+$success: #11c177;
+$fail: #ff363f;
+$lightestColor: white;
 $shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+$fog: rgba(0, 0, 0, .7);
 
 /* ==================--------------- WHITE SPACES ---------------================== */
 $space-xs: 4px;

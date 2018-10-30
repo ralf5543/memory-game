@@ -10,14 +10,29 @@
 </head>
 <body>
 
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+
+    <symbol id="icon-star" viewBox="0 0 512 512">
+        <path d="m494 185c0 4-3 9-8 14l-103 101 24 143c0 1 0 3 0 5 0 4-1 8-3 10-2 3-4 5-8 5-4 0-8-2-12-4l-128-67-128 67c-4 2-8 4-12 4-4 0-7-2-9-5-2-2-3-6-3-10 0-1 0-3 1-5l24-143-104-101c-4-6-7-10-7-14 0-7 6-12 16-13l144-21 64-130c4-8 8-12 14-12 6 0 10 4 14 12l64 130 144 21c10 1 16 6 16 13z"/>
+    </symbol>
+
+    <symbol id="icon-star-o" viewBox="0 0 512 512">
+        <path d="m343 287l88-85-121-18-54-109-54 109-121 18 88 85-21 120 108-57 108 57z m151-102c0 4-3 9-8 14l-103 101 24 143c0 1 0 3 0 5 0 10-3 15-11 15-4 0-8-2-12-4l-128-67-128 67c-4 2-8 4-12 4-4 0-7-2-9-5-2-2-3-6-3-10 0-1 0-3 1-5l24-143-104-101c-4-6-7-10-7-14 0-7 6-12 16-13l144-21 64-130c4-8 8-12 14-12 6 0 10 4 14 12l64 130 144 21c10 1 16 6 16 13z"/>
+    </symbol>
+
+</svg>
+
 <header class="mainHeader">
     <h1 class="mainTitle">Memory Game</h1>
+
     <div class="mainHeader__inner">
-        <p class="stars">dfgfd</p>
-        <p class="counter">
-            <span class="counterNumber">0</span>
-            moves
-        </p>
+        <div class="score">
+            <div class="stars">5</div>
+            <p class="counter">
+                <span class="counterNumber">0</span>
+                moves
+            </p>
+        </div>
         <button class="reset js-reset">
             <img class="reset__icon" src="src/assets/img/reload.svg" alt="reset game">
         </button>
@@ -35,7 +50,7 @@
                          dist/assets/img/cow-200px_3x.jpg 600w,
 						dist/assets/img/cow-300px.jpg 300w,
 						dist/assets/img/cow-300px_2x.jpg 600w"
-                 alt="Appify illustration"
+                 alt="cow illustration"
             >
         </button>
     </li>
@@ -50,7 +65,7 @@
                          dist/assets/img/cow-200px_3x.jpg 600w,
 						dist/assets/img/cow-300px.jpg 300w,
 						dist/assets/img/cow-300px_2x.jpg 600w"
-                 alt="Appify illustration"
+                 alt="cow illustration"
             >
         </button>
     </li>
@@ -66,7 +81,7 @@
 						dist/assets/img/koala-300px.jpg 300w,
 						dist/assets/img/koala-300px_2x.jpg 600w,
 						dist/assets/img/koala-300px_2x.jpg 600w"
-                 alt="Appify illustration"
+                 alt="koala illustration"
             >
         </button>
     </li>
@@ -82,7 +97,7 @@
 						dist/assets/img/koala-300px.jpg 300w,
 						dist/assets/img/koala-300px_2x.jpg 600w,
 						dist/assets/img/koala-300px_2x.jpg 600w"
-                 alt="Appify illustration"
+                 alt="koala illustration"
             >
         </button>
     </li>
@@ -97,8 +112,8 @@
                          dist/assets/img/crocodile-200px_3x.jpg 600w,
 						dist/assets/img/crocodile-300px.jpg 300w,
 						dist/assets/img/crocodile-300px_2x.jpg 600w,
-						dist/assets/img/crocodile-300px_2x.jpg 600w"
-                 alt="Appify illustration"
+						dist/assets/img/crocodile-300px_3x.jpg 900w"
+                 alt="crocodile illustration"
             >
         </button>
     </li>
@@ -113,40 +128,164 @@
                          dist/assets/img/crocodile-200px_3x.jpg 600w,
 						dist/assets/img/crocodile-300px.jpg 300w,
 						dist/assets/img/crocodile-300px_2x.jpg 600w,
-						dist/assets/img/crocodile-300px_2x.jpg 600w"
-                 alt="Appify illustration"
+						dist/assets/img/crocodile-300px_3x.jpg 900w"
+                 alt="crocodile illustration"
             >
         </button>
     </li>
     <li class="card">
-        <button class="card__button">D</button>
+        <button class="card__button">
+            <span class="u-hiddenWording">bee</span>
+            <img class="card__image"
+                 sizes="25vw"
+                 src="dist/assets/img/bee-original.jpg"
+                 srcset="dist/assets/img/bee-200px.jpg 200w,
+                         dist/assets/img/bee-200px_2x.jpg 400w,
+                         dist/assets/img/bee-200px_3x.jpg 600w,
+						dist/assets/img/bee-300px.jpg 300w,
+						dist/assets/img/bee-300px_2x.jpg 600w"
+                 alt="bee illustration"
+            >
+        </button>
     </li>
     <li class="card">
-        <button class="card__button">D</button>
+        <button class="card__button">
+            <span class="u-hiddenWording">bee</span>
+            <img class="card__image"
+                 sizes="25vw"
+                 src="dist/assets/img/bee-original.jpg"
+                 srcset="dist/assets/img/bee-200px.jpg 200w,
+                         dist/assets/img/bee-200px_2x.jpg 400w,
+                         dist/assets/img/bee-200px_3x.jpg 600w,
+						dist/assets/img/bee-300px.jpg 300w,
+						dist/assets/img/bee-300px_2x.jpg 600w"
+                 alt="bee illustration"
+            >
+        </button>
     </li>
     <li class="card">
-        <button class="card__button">E</button>
+        <button class="card__button">
+            <span class="u-hiddenWording">dolphin</span>
+            <img class="card__image"
+                 sizes="25vw"
+                 src="dist/assets/img/dolphin-original.jpg"
+                 srcset="dist/assets/img/dolphin-200px.jpg 200w,
+                         dist/assets/img/dolphin-200px_2x.jpg 400w,
+                         dist/assets/img/dolphin-200px_3x.jpg 600w,
+						dist/assets/img/dolphin-300px.jpg 300w,
+						dist/assets/img/dolphin-300px_2x.jpg 600w"
+                 alt="dolphin illustration"
+            >
+        </button>
     </li>
     <li class="card">
-        <button class="card__button">E</button>
+        <button class="card__button">
+            <span class="u-hiddenWording">dolphin</span>
+            <img class="card__image"
+                 sizes="25vw"
+                 src="dist/assets/img/dolphin-original.jpg"
+                 srcset="dist/assets/img/dolphin-200px.jpg 200w,
+                         dist/assets/img/dolphin-200px_2x.jpg 400w,
+                         dist/assets/img/dolphin-200px_3x.jpg 600w,
+						dist/assets/img/dolphin-300px.jpg 300w,
+						dist/assets/img/dolphin-300px_2x.jpg 600w"
+                 alt="dolphin illustration"
+            >
+        </button>
     </li>
     <li class="card">
-        <button class="card__button">F</button>
+        <button class="card__button">
+            <span class="u-hiddenWording">cat</span>
+            <img class="card__image"
+                 sizes="25vw"
+                 src="dist/assets/img/cat-original.jpg"
+                 srcset="dist/assets/img/cat-200px.jpg 200w,
+                         dist/assets/img/cat-200px_2x.jpg 400w,
+                         dist/assets/img/cat-200px_3x.jpg 600w,
+						dist/assets/img/cat-300px.jpg 300w,
+						dist/assets/img/cat-300px_2x.jpg 600w"
+                 alt="cat illustration"
+            >
+        </button>
     </li>
     <li class="card">
-        <button class="card__button">F</button>
+        <button class="card__button">
+            <span class="u-hiddenWording">cat</span>
+            <img class="card__image"
+                 sizes="25vw"
+                 src="dist/assets/img/cat-original.jpg"
+                 srcset="dist/assets/img/cat-200px.jpg 200w,
+                         dist/assets/img/cat-200px_2x.jpg 400w,
+                         dist/assets/img/cat-200px_3x.jpg 600w,
+						dist/assets/img/cat-300px.jpg 300w,
+						dist/assets/img/cat-300px_2x.jpg 600w"
+                 alt="cat illustration"
+            >
+        </button>
     </li>
     <li class="card">
-        <button class="card__button">G</button>
+        <button class="card__button">
+            <span class="u-hiddenWording">fish</span>
+            <img class="card__image"
+                 sizes="25vw"
+                 src="dist/assets/img/fish-original.jpg"
+                 srcset="dist/assets/img/fish-200px.jpg 200w,
+                         dist/assets/img/fish-200px_2x.jpg 400w,
+                         dist/assets/img/fish-200px_3x.jpg 600w,
+						dist/assets/img/fish-300px.jpg 300w,
+						dist/assets/img/fish-300px_2x.jpg 600w,
+						dist/assets/img/fish-300px_3x.jpg 900w"
+                 alt="fish illustration"
+            >
+        </button>
     </li>
     <li class="card">
-        <button class="card__button">G</button>
+        <button class="card__button">
+            <span class="u-hiddenWording">fish</span>
+            <img class="card__image"
+                 sizes="25vw"
+                 src="dist/assets/img/fish-original.jpg"
+                 srcset="dist/assets/img/fish-200px.jpg 200w,
+                         dist/assets/img/fish-200px_2x.jpg 400w,
+                         dist/assets/img/fish-200px_3x.jpg 600w,
+						dist/assets/img/fish-300px.jpg 300w,
+						dist/assets/img/fish-300px_2x.jpg 600w,
+						dist/assets/img/fish-300px_3x.jpg 900w"
+                 alt="fish illustration"
+            >
+        </button>
     </li>
     <li class="card">
-        <button class="card__button">H</button>
+        <button class="card__button">
+            <span class="u-hiddenWording">bird</span>
+            <img class="card__image"
+                 sizes="25vw"
+                 src="dist/assets/img/bird-original.jpg"
+                 srcset="dist/assets/img/bird-200px.jpg 200w,
+                         dist/assets/img/bird-200px_2x.jpg 400w,
+                         dist/assets/img/bird-200px_3x.jpg 600w,
+						dist/assets/img/bird-300px.jpg 300w,
+						dist/assets/img/bird-300px_2x.jpg 600w,
+						dist/assets/img/bird-300px_3x.jpg 900w"
+                 alt="bird illustration"
+            >
+        </button>
     </li>
     <li class="card">
-        <button class="card__button">H</button>
+        <button class="card__button">
+            <span class="u-hiddenWording">bird</span>
+            <img class="card__image"
+                 sizes="25vw"
+                 src="dist/assets/img/bird-original.jpg"
+                 srcset="dist/assets/img/bird-200px.jpg 200w,
+                         dist/assets/img/bird-200px_2x.jpg 400w,
+                         dist/assets/img/bird-200px_3x.jpg 600w,
+						dist/assets/img/bird-300px.jpg 300w,
+						dist/assets/img/bird-300px_2x.jpg 600w,
+						dist/assets/img/bird-300px_3x.jpg 900w"
+                 alt="bird illustration"
+            >
+        </button>
     </li>
 </ul>
 
@@ -156,7 +295,8 @@
             <span class="u-hiddenWording">Close</span>
         </button>
         <h3 class="modal__title">Congratulations ! You won !</h3>
-        <p class="modal__text">With <span class="modal__text__moves">0</span> moves and <span class="modal__text__stars">5</span> star<span class="modal__text__starsPlural"></span>.</p>
+        <p class="modal__text">With <span class="modal__text__moves">0</span> moves and <span
+                class="modal__text__stars">5</span> star<span class="modal__text__starsPlural"></span>.</p>
         <p class="modal__text">Wooooooo !</p>
         <button class="modal__btn js-reset js-closeModal">Play again !</button>
     </div>

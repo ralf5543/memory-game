@@ -318,9 +318,6 @@ input::-webkit-inner-spin-button {
 /**
  * centers an element in a relative context
  */
-/**
- * to smoothly underline a link
- */
 /* usefull mixins */
 body {
   max-width: 1280px;
@@ -368,7 +365,12 @@ body {
 
 .mainHeader__inner {
   display: flex;
-  justify-content: space-around; }
+  justify-content: space-around;
+  align-items: center; }
+
+.score {
+  display: flex;
+  align-items: center; }
 
 .counter {
   margin: 0;
@@ -376,6 +378,20 @@ body {
 
 .reset__icon {
   width: 24px; }
+
+.stars {
+  margin-right: 16px; }
+  @media (min-width: 769px) {
+    .stars {
+      margin-right: 32px; } }
+
+.stars__icon {
+  width: 12px;
+  height: 12px; }
+  @media (min-width: 769px) {
+    .stars__icon {
+      width: 40px;
+      height: 40px; } }
 
 .cards {
   display: grid;
@@ -414,7 +430,7 @@ body {
   @media (min-width: 1024px) {
     .card {
       margin: 0 16px 32px; } }
-  .card:hover {
+  .card:hover:not(.is-revealed) {
     -webkit-transform: scale(1.1);
             transform: scale(1.1);
     box-shadow: 3px 3px 16px -3px rgba(0, 0, 0, 0.75); }

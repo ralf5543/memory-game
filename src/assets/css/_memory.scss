@@ -26,6 +26,12 @@
 .mainHeader__inner {
   display: flex;
   justify-content: space-around;
+  align-items: center;
+}
+
+.score {
+  display: flex;
+  align-items: center;
 }
 
 .counter {
@@ -35,6 +41,24 @@
 
 .reset__icon {
   width: 24px;
+}
+
+.stars {
+  margin-right: $space-m;
+
+  @media ($tablet) {
+    margin-right: $space-l;
+  }
+}
+
+.stars__icon {
+  width: 12px;
+  height: 12px;
+
+  @media ($tablet) {
+    width: 40px;
+    height: 40px;
+  }
 }
 
 // =============================------------------------- Cards -------------------------=============================
@@ -80,7 +104,7 @@
     margin: 0 $space-m $space-l;
   }
 
-  &:hover {
+  &:hover:not(.is-revealed) {
     transform: scale(1.1);
     box-shadow: 3px 3px 16px -3px rgba(0, 0, 0, 0.75);
   }

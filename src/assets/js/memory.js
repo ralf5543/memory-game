@@ -56,8 +56,16 @@ let counter = document.querySelector('.counterNumber');
 
 let movesResults = document.querySelector('.modal__text__moves');
 
-//
-let stars = 'rrr';
+//=======================----------------- STARS MANAGEMENT
+let stars = '5';
+
+let starsIcons = document.querySelector('.stars');
+
+let fullStarIcon = '<svg class="stars__icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-star"></use></svg>';
+let emptyStarIcon = '<svg class="stars__icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#sample"></use></svg>';
+
+starsIcons.innerHTML = fullStarIcon + fullStarIcon + fullStarIcon + fullStarIcon + fullStarIcon;
+
 
 const pickCard = function (e) {
   const _this = e.currentTarget;
@@ -70,25 +78,21 @@ const pickCard = function (e) {
   // we prevent from chosing again that card
   _this.removeEventListener('click', pickCard);
 
-  console.log('parentNode : ', _this.parentNode);
-  console.log('e.target : ', e.currentTarget);
-
   if (chosenCards.length === 2) {
     //when 2 cards have been picked, if the text of the elements are the same...
     if (chosenCards[0].outerText === chosenCards[1].outerText) {
-      console.log('a pair !');
       for (let chosenCard of chosenCards) {
         chosenCard.parentNode.classList.add('is-correct');
       }
       score++;
     } else {
-      console.log('try again...');
       //If not, the 2 cards are selectable for a new try...
       for (let chosenCard of chosenCards) {
         chosenCard.parentNode.classList.toggle('is-wrong');
         chosenCard.addEventListener('click', pickCard);
         //...and they're returned after 3s
         setTimeout(function () {
+          //settimeout, to late the player see and remember his mistake
           chosenCard.parentNode.classList.toggle('is-revealed');
           chosenCard.parentNode.classList.toggle('is-wrong');
         }, 3000);
@@ -97,30 +101,31 @@ const pickCard = function (e) {
     } // and the array is empty
     chosenCards = [];
     attemptsNumber++;
-    console.log('counter : ', counter);
     counter.textContent = attemptsNumber;
 
     if (attemptsNumber <= (allCards.length / 2)) {
+      starsIcons.innerHTML = fullStarIcon + fullStarIcon + fullStarIcon + fullStarIcon + fullStarIcon;
       stars = 5;
     } else if (attemptsNumber <= ((allCards.length / 2) + 2)) {
+      starsIcons.innerHTML = fullStarIcon + fullStarIcon + fullStarIcon + fullStarIcon + emptyStarIcon;
       stars = 4;
-      console.log(4);
     } else if (attemptsNumber <= ((allCards.length / 2) + 4)) {
+      starsIcons.innerHTML = fullStarIcon + fullStarIcon + fullStarIcon + emptyStarIcon + emptyStarIcon;
       stars = 3;
     } else if (attemptsNumber <= ((allCards.length / 2) + 6)) {
+      starsIcons.innerHTML = fullStarIcon + fullStarIcon + emptyStarIcon + emptyStarIcon + emptyStarIcon;
       stars = 2;
     } else if (attemptsNumber <= ((allCards.length / 2) + 8)) {
+      starsIcons.innerHTML = fullStarIcon + emptyStarIcon + emptyStarIcon + emptyStarIcon + emptyStarIcon;
       stars = 1;
     } else {
-      stars = 0
+      starsIcons.innerHTML = emptyStarIcon + emptyStarIcon + emptyStarIcon + emptyStarIcon + emptyStarIcon;
+      stars = 0;
     }
-
-    document.querySelector('.stars').textContent = stars;
   }
 
   // when all pairs have been successfully revealed, the game is over
   if (score === shuffledCards.length / 2) {
-    console.log('You win the game !!!');
     document.querySelector('.modal__text__stars').textContent = stars;
     if (stars >= 2) {
       document.querySelector('.modal__text__starsPlural').textContent = 's';
@@ -134,7 +139,6 @@ const pickCard = function (e) {
 const launchGame = function () {
   score = 0;
   attemptsNumber = 0;
-  console.log('score : ', score);
 
   //shuffle the li elements
   shuffledCards = shuffle(shuffledCards);
@@ -151,7 +155,7 @@ const launchGame = function () {
   for (i = 0; i < cardBtn.length; i++) {
     cardBtn[i].addEventListener('click', pickCard);
   }
-}
+};
 
 //Reset game button
 //target all button elements with 'js-reset' class
@@ -163,7 +167,6 @@ let resetBtns = Array.prototype.slice.call(resetBtnsClass);
 for (let resetBtn of resetBtns) {
   resetBtn.addEventListener('click', launchGame);
 }
-
 
 //init
 launchGame();

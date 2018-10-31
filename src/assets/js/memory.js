@@ -80,7 +80,7 @@ const pickCard = function (e) {
 
   if (chosenCards.length === 2) {
     //when 2 cards have been picked, if the text of the elements are the same...
-    if (chosenCards[0].outerText === chosenCards[1].outerText) {
+    if (chosenCards[0].innerText === chosenCards[1].innerText) {
       for (let chosenCard of chosenCards) {
         chosenCard.parentNode.classList.add('is-correct');
       }

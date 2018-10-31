@@ -62,10 +62,12 @@ let stars = '5';
 let starsIcons = document.querySelector('.stars');
 
 let fullStarIcon = '<svg class="stars__icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-star"></use></svg>';
-let emptyStarIcon = '<svg class="stars__icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#sample"></use></svg>';
+let emptyStarIcon = '<svg class="stars__icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-star-o"></use></svg>';
 
 starsIcons.innerHTML = fullStarIcon + fullStarIcon + fullStarIcon + fullStarIcon + fullStarIcon;
 
+//Launch timer
+let startGameTime = performance.now();
 
 const pickCard = function (e) {
   const _this = e.currentTarget;
@@ -95,13 +97,16 @@ const pickCard = function (e) {
           //settimeout, to late the player see and remember his mistake
           chosenCard.parentNode.classList.toggle('is-revealed');
           chosenCard.parentNode.classList.toggle('is-wrong');
-        }, 3000);
+        }, 2000);
 
       }
     } // and the array is empty
     chosenCards = [];
     attemptsNumber++;
     counter.textContent = attemptsNumber;
+    if (attemptsNumber > 1) {
+      document.querySelector('.counterNumber__plural').textContent = 's';
+    }
 
     if (attemptsNumber <= (allCards.length / 2)) {
       starsIcons.innerHTML = fullStarIcon + fullStarIcon + fullStarIcon + fullStarIcon + fullStarIcon;
@@ -131,14 +136,26 @@ const pickCard = function (e) {
       document.querySelector('.modal__text__starsPlural').textContent = 's';
     }
     movesResults.textContent = attemptsNumber;
+
+    //stop timer, and convert it in seconds
+    const endGameTime = performance.now();
+
+    const time = Math.floor((startGameTime - endGameTime) / 1000);
+    const timeStringed = time.toString();
+
+    //we remove the minor sign, and display the result
+    document.querySelector('.modal__title__time').textContent = timeStringed.slice(1);
+
     toggleModal();
   }
 };
 
 
 const launchGame = function () {
+  //reset trials, score, and timer
   score = 0;
   attemptsNumber = 0;
+  startGameTime = performance.now();
 
   //shuffle the li elements
   shuffledCards = shuffle(shuffledCards);

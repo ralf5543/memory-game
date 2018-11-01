@@ -131,6 +131,10 @@
 .card__button {
   position: relative;
   width: 100%;
+
+  &.is-deactivated {
+  	pointer-events: none;//> ie10 only
+  }
 }
 
 .card__image {

@@ -449,6 +449,8 @@ body {
 .card__button {
   position: relative;
   width: 100%; }
+  .card__button.is-deactivated {
+    pointer-events: none; }
 
 .card__image {
   position: absolute;

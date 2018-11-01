@@ -92,11 +92,19 @@ const pickCard = function (e) {
       for (let chosenCard of chosenCards) {
         chosenCard.parentNode.classList.toggle('is-wrong');
         chosenCard.addEventListener('click', pickCard);
-        //...and they're returned after 3s
+
+        //prevents from clicking before the end of the animation
+        for (i = 0; i < cardBtn.length; i++) {
+            cardBtn[i].classList.add('is-deactivated');
+          }
+        //...and they're returned after 2s
         setTimeout(function () {
           //settimeout, to late the player see and remember his mistake
           chosenCard.parentNode.classList.toggle('is-revealed');
           chosenCard.parentNode.classList.toggle('is-wrong');
+          for (i = 0; i < cardBtn.length; i++) {
+            cardBtn[i].classList.remove('is-deactivated');
+          }
         }, 2000);
 
       }

@@ -1,6 +1,6 @@
 //reorder an arraw children with random positions
-function shuffle(array) {
-  var currentIndex = array.length, temporaryValue, randomIndex;
+const shuffle = (array => {
+  let currentIndex = array.length, temporaryValue, randomIndex;
 
   // While there remain elements to shuffle...
   while (0 !== currentIndex) {
@@ -16,7 +16,7 @@ function shuffle(array) {
   }
 
   return array;
-}
+});
 
 //==============------------------ MODAL
 const modal = document.querySelector('.js-modal');
@@ -52,13 +52,12 @@ function chrono(){
   timerID = setTimeout("chrono()", 10)
 }
 
-function chronoStart(){
+const chronoStart = () => {
   start = new Date()
   chrono()
-}
+};
 
-
-const update_moves = function() {
+const update_moves = () => {
   //store the successfull attempts
   let score;
 }
@@ -98,7 +97,7 @@ starsIcons.innerHTML = fullStarIcon + fullStarIcon + fullStarIcon + fullStarIcon
 
 
 
-const pickCard = function (e) {
+const pickCard = (e => {
   const _this = e.currentTarget;
   //the li containing the button toggles a class to "return" visually the card
   _this.parentNode.classList.toggle('is-revealed');
@@ -129,7 +128,7 @@ const pickCard = function (e) {
           resetBtns[i].classList.add('is-deactivated');
         }
         //...and they're returned after 2s
-        setTimeout(function () {
+        setTimeout( () => {
           //settimeout, to late the player see and remember his mistake
           chosenCard.parentNode.classList.toggle('is-revealed');
           chosenCard.parentNode.classList.remove('is-wrong', 'shake');
@@ -183,10 +182,10 @@ const pickCard = function (e) {
     //and make the modal visible
     toggleModal();
   }
-};
+});
 
 
-const launchGame = function () {
+const launchGame = () => {
   //reset trials, score, and timer
   score = 0;
   attemptsNumber = 0;

@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/ralf5543/memory-game#readme",
   "dependencies": {
+    "animate.css": "^3.7.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^6.0.0",
     "gulp-postcss": "^8.0.0",

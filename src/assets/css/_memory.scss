@@ -32,11 +32,14 @@
 .score {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+  padding: 0 $space-m;
 }
 
 .counter {
-  margin: 0;
+  margin: 0 $space-l 0 0;
   font-size: 1.6rem;
+      white-space: nowrap;
 }
 
 .reset__icon {
@@ -59,6 +62,15 @@
     width: 40px;
     height: 40px;
   }
+}
+
+.timer {
+    min-width: 220px;
+	border: 0;
+}
+
+.reset.js-reset {
+    padding: $space-m;
 }
 
 // =============================------------------------- Cards -------------------------=============================
@@ -131,10 +143,6 @@
 .card__button {
   position: relative;
   width: 100%;
-
-  &.is-deactivated {
-  	pointer-events: none;//> ie10 only
-  }
 }
 
 .card__image {

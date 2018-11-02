@@ -32,11 +32,41 @@ for (modalCloser of modalClosers) {
 }
 
 
+//==============------------------ STOPWATCH
+let timer = document.querySelector('.timer');
+let startTime = 0;
+let start = 0;
+let end = 0;
+let diff = 0;
+let timerID = 0;
+function chrono(){
+  end = new Date()
+  diff = end - start
+  diff = new Date(diff)
+  var msec = diff.getMilliseconds()
+  var sec = diff.getSeconds()
+  var min = diff.getMinutes()
+  var hr = diff.getHours()-1
+
+  timer.value = min + " minute(s) and " + sec + " seconds";
+  timerID = setTimeout("chrono()", 10)
+}
+
+function chronoStart(){
+  start = new Date()
+  chrono()
+}
+
+
+const update_moves = function() {
+  //store the successfull attempts
+  let score;
+}
+
 //store the attempts number
 let attemptsNumber;
 
-//store the successfull attempts
-let score;
+
 
 const memory = document.querySelector('.cards');
 
@@ -66,12 +96,10 @@ let emptyStarIcon = '<svg class="stars__icon"><use xmlns:xlink="http://www.w3.or
 
 starsIcons.innerHTML = fullStarIcon + fullStarIcon + fullStarIcon + fullStarIcon + fullStarIcon;
 
-//Launch timer
-let startGameTime = performance.now();
+
 
 const pickCard = function (e) {
   const _this = e.currentTarget;
-
   //the li containing the button toggles a class to "return" visually the card
   _this.parentNode.classList.toggle('is-revealed');
 
@@ -84,26 +112,32 @@ const pickCard = function (e) {
     //when 2 cards have been picked, if the text of the elements are the same...
     if (chosenCards[0].innerText === chosenCards[1].innerText) {
       for (let chosenCard of chosenCards) {
-        chosenCard.parentNode.classList.add('is-correct');
+        chosenCard.parentNode.classList.add('is-correct', 'tada');
       }
       score++;
     } else {
       //If not, the 2 cards are selectable for a new try...
       for (let chosenCard of chosenCards) {
-        chosenCard.parentNode.classList.toggle('is-wrong');
+        chosenCard.parentNode.classList.add('is-wrong', 'shake');
         chosenCard.addEventListener('click', pickCard);
 
         //prevents from clicking before the end of the animation
         for (i = 0; i < cardBtn.length; i++) {
             cardBtn[i].classList.add('is-deactivated');
           }
+        for (i = 0; i < resetBtns.length; i++) {
+          resetBtns[i].classList.add('is-deactivated');
+        }
         //...and they're returned after 2s
         setTimeout(function () {
           //settimeout, to late the player see and remember his mistake
           chosenCard.parentNode.classList.toggle('is-revealed');
-          chosenCard.parentNode.classList.toggle('is-wrong');
+          chosenCard.parentNode.classList.remove('is-wrong', 'shake');
           for (i = 0; i < cardBtn.length; i++) {
             cardBtn[i].classList.remove('is-deactivated');
+          }
+          for (i = 0; i < resetBtns.length; i++) {
+            resetBtns[i].classList.remove('is-deactivated');
           }
         }, 2000);
 
@@ -128,12 +162,9 @@ const pickCard = function (e) {
     } else if (attemptsNumber <= ((allCards.length / 2) + 6)) {
       starsIcons.innerHTML = fullStarIcon + fullStarIcon + emptyStarIcon + emptyStarIcon + emptyStarIcon;
       stars = 2;
-    } else if (attemptsNumber <= ((allCards.length / 2) + 8)) {
+    } else {
       starsIcons.innerHTML = fullStarIcon + emptyStarIcon + emptyStarIcon + emptyStarIcon + emptyStarIcon;
       stars = 1;
-    } else {
-      starsIcons.innerHTML = emptyStarIcon + emptyStarIcon + emptyStarIcon + emptyStarIcon + emptyStarIcon;
-      stars = 0;
     }
   }
 
@@ -145,15 +176,11 @@ const pickCard = function (e) {
     }
     movesResults.textContent = attemptsNumber;
 
-    //stop timer, and convert it in seconds
-    const endGameTime = performance.now();
+    //we display the time in the modal
+    clearTimeout(timerID);
+    document.querySelector('.modal__title__time').textContent = timer.value;
 
-    const time = Math.floor((startGameTime - endGameTime) / 1000);
-    const timeStringed = time.toString();
-
-    //we remove the minor sign, and display the result
-    document.querySelector('.modal__title__time').textContent = timeStringed.slice(1);
-
+    //and make the modal visible
     toggleModal();
   }
 };
@@ -163,13 +190,13 @@ const launchGame = function () {
   //reset trials, score, and timer
   score = 0;
   attemptsNumber = 0;
-  startGameTime = performance.now();
+  chronoStart();
 
   //shuffle the li elements
   shuffledCards = shuffle(shuffledCards);
   for (let shuffledCard of shuffledCards) {
     //remove win indications from last game
-    shuffledCard.classList.remove('is-correct', 'is-wrong', 'is-revealed');
+    shuffledCard.classList.remove('is-correct', 'tada', 'is-wrong', 'is-revealed');
     fragment.appendChild(shuffledCard);
   }
   //appends reordered li elements in ul

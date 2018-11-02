@@ -6,7 +6,7 @@
     <title>Memory Game -Udacity Project</title>
 
     <link rel="stylesheet" href="dist/assets/css/styles.css">
-
+	<link rel="stylesheet" href="node_modules/animate.css/animate.min.css">
 </head>
 <body>
 
@@ -32,6 +32,9 @@
                 <span class="counterNumber">0</span>
                 move<span class="counterNumber__plural"></span>
             </p>
+
+  			<input class="timer" type="text" value="0:00:00:00">
+
         </div>
         <button class="reset js-reset">
             <img class="reset__icon" src="src/assets/img/reload.svg" alt="reset game">
@@ -39,7 +42,7 @@
     </div>
 </header>
 <ul class="cards">
-    <li class="card">
+    <li class="card animated">
         <button class="card__button">
             <span class="u-hiddenWording">cow</span>
             <img class="card__image"
@@ -54,7 +57,7 @@
             >
         </button>
     </li>
-    <li class="card">
+    <li class="card animated">
         <button class="card__button">
             <span class="u-hiddenWording">cow</span>
             <img class="card__image"
@@ -69,7 +72,7 @@
             >
         </button>
     </li>
-    <li class="card">
+    <li class="card animated">
         <button class="card__button">
             <span class="u-hiddenWording">koala</span>
             <img class="card__image"
@@ -85,7 +88,7 @@
             >
         </button>
     </li>
-    <li class="card">
+    <li class="card animated">
         <button class="card__button">
             <span class="u-hiddenWording">koala</span>
             <img class="card__image"
@@ -101,7 +104,7 @@
             >
         </button>
     </li>
-    <li class="card">
+    <li class="card animated">
         <button class="card__button">
             <span class="u-hiddenWording">crocodile</span>
             <img class="card__image"
@@ -117,7 +120,7 @@
             >
         </button>
     </li>
-    <li class="card">
+    <li class="card animated">
         <button class="card__button">
             <span class="u-hiddenWording">crocodile</span>
             <img class="card__image"
@@ -133,7 +136,7 @@
             >
         </button>
     </li>
-    <li class="card">
+    <li class="card animated">
         <button class="card__button">
             <span class="u-hiddenWording">bee</span>
             <img class="card__image"
@@ -148,7 +151,7 @@
             >
         </button>
     </li>
-    <li class="card">
+    <li class="card animated">
         <button class="card__button">
             <span class="u-hiddenWording">bee</span>
             <img class="card__image"
@@ -163,7 +166,7 @@
             >
         </button>
     </li>
-    <li class="card">
+    <li class="card animated">
         <button class="card__button">
             <span class="u-hiddenWording">dolphin</span>
             <img class="card__image"
@@ -178,7 +181,7 @@
             >
         </button>
     </li>
-    <li class="card">
+    <li class="card animated">
         <button class="card__button">
             <span class="u-hiddenWording">dolphin</span>
             <img class="card__image"
@@ -193,7 +196,7 @@
             >
         </button>
     </li>
-    <li class="card">
+    <li class="card animated">
         <button class="card__button">
             <span class="u-hiddenWording">cat</span>
             <img class="card__image"
@@ -208,7 +211,7 @@
             >
         </button>
     </li>
-    <li class="card">
+    <li class="card animated">
         <button class="card__button">
             <span class="u-hiddenWording">cat</span>
             <img class="card__image"
@@ -223,7 +226,7 @@
             >
         </button>
     </li>
-    <li class="card">
+    <li class="card animated">
         <button class="card__button">
             <span class="u-hiddenWording">fish</span>
             <img class="card__image"
@@ -239,7 +242,7 @@
             >
         </button>
     </li>
-    <li class="card">
+    <li class="card animated">
         <button class="card__button">
             <span class="u-hiddenWording">fish</span>
             <img class="card__image"
@@ -255,7 +258,7 @@
             >
         </button>
     </li>
-    <li class="card">
+    <li class="card animated">
         <button class="card__button">
             <span class="u-hiddenWording">bird</span>
             <img class="card__image"
@@ -271,7 +274,7 @@
             >
         </button>
     </li>
-    <li class="card">
+    <li class="card animated">
         <button class="card__button">
             <span class="u-hiddenWording">bird</span>
             <img class="card__image"
@@ -295,7 +298,7 @@
             <span class="u-hiddenWording">Close</span>
         </button>
         <h3 class="modal__title">Congratulations !</h3>
-        <h4 class="modal__secondaryTitle">You won in <span class="modal__title__time"></span> seconds !</h4>
+        <h4 class="modal__secondaryTitle">You won in <span class="modal__title__time"></span> !</h4>
         <p class="modal__text">With <span class="modal__text__moves">0</span> moves and <span
                 class="modal__text__stars">5</span> star<span class="modal__text__starsPlural"></span>.</p>
         <p class="modal__text">Wooooooo !</p>

@@ -344,6 +344,9 @@ body {
   display: inline-block;
   fill: currentColor; }
 
+.is-deactivated {
+  pointer-events: none; }
+
 /* the css for the website itself */
 .mainHeader {
   margin-bottom: 8px; }
@@ -370,11 +373,14 @@ body {
 
 .score {
   display: flex;
-  align-items: center; }
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0 16px; }
 
 .counter {
-  margin: 0;
-  font-size: 1.6rem; }
+  margin: 0 32px 0 0;
+  font-size: 1.6rem;
+  white-space: nowrap; }
 
 .reset__icon {
   width: 24px; }
@@ -392,6 +398,13 @@ body {
     .stars__icon {
       width: 40px;
       height: 40px; } }
+
+.timer {
+  min-width: 220px;
+  border: 0; }
+
+.reset.js-reset {
+  padding: 16px; }
 
 .cards {
   display: grid;
@@ -449,8 +462,6 @@ body {
 .card__button {
   position: relative;
   width: 100%; }
-  .card__button.is-deactivated {
-    pointer-events: none; }
 
 .card__image {
   position: absolute;

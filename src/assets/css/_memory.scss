@@ -39,7 +39,7 @@
 .counter {
   margin: 0 $space-l 0 0;
   font-size: 1.6rem;
-      white-space: nowrap;
+  white-space: nowrap;
 }
 
 .reset__icon {
@@ -65,12 +65,12 @@
 }
 
 .timer {
-    min-width: 220px;
-	border: 0;
+  min-width: 220px;
+  border: 0;
 }
 
 .reset.js-reset {
-    padding: $space-m;
+  padding: $space-m;
 }
 
 // =============================------------------------- Cards -------------------------=============================

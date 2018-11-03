@@ -122,8 +122,8 @@ const pickCard = (e => {
 
         //prevents from clicking before the end of the animation
         for (i = 0; i < cardBtn.length; i++) {
-            cardBtn[i].classList.add('is-deactivated');
-          }
+          cardBtn[i].classList.add('is-deactivated');
+        }
         for (i = 0; i < resetBtns.length; i++) {
           resetBtns[i].classList.add('is-deactivated');
         }

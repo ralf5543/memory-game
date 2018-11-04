@@ -43,10 +43,10 @@ function chrono(){
   end = new Date()
   diff = end - start
   diff = new Date(diff)
-  var msec = diff.getMilliseconds()
-  var sec = diff.getSeconds()
-  var min = diff.getMinutes()
-  var hr = diff.getHours()-1
+  const msec = diff.getMilliseconds()
+  const sec = diff.getSeconds()
+  const min = diff.getMinutes()
+  const hr = diff.getHours()-1
 
   timer.value = min + " minute(s) and " + sec + " seconds";
   timerID = setTimeout("chrono()", 10)
@@ -186,11 +186,12 @@ const pickCard = (e => {
 
 
 const launchGame = () => {
-  //reset trials, score, and timer
+  //reset trials, score, timer and selected cards array
   starsIcons.innerHTML = fullStarIcon + fullStarIcon + fullStarIcon + fullStarIcon + fullStarIcon;
   stars = 5;
   score = 0;
   attemptsNumber = 0;
+  chosenCards = [];
   chronoStart();
 
   //shuffle the li elements
@@ -221,9 +222,11 @@ for (let resetBtn of resetBtns) {
   resetBtn.addEventListener('click', launchGame);
 }
 
+//The array storing the 2 chosen cards at each try
+let chosenCards = [];
+
 //init
 launchGame();
 
-//The array storing the 2 chosen cards at each try
-let chosenCards = [];
+
 

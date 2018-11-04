@@ -187,6 +187,8 @@ const pickCard = (e => {
 
 const launchGame = () => {
   //reset trials, score, and timer
+  starsIcons.innerHTML = fullStarIcon + fullStarIcon + fullStarIcon + fullStarIcon + fullStarIcon;
+  stars = 5;
   score = 0;
   attemptsNumber = 0;
   chronoStart();

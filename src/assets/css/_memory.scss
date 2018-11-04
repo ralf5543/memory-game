@@ -261,3 +261,65 @@
     background-color: $secondaryColorAlt;
   }
 }
+
+
+// =============================------------------------- ANIMATION OVERRIDEN -------------------------=============================
+
+@keyframes shake-memory {
+  from,
+  to {
+    transform: translate3d(0, 0, 0) rotateY(180deg);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translate3d(-10px, 0, 0) rotateY(180deg);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translate3d(10px, 0, 0) rotateY(180deg);
+  }
+}
+
+.card.shake.is-wrong {
+  animation-name: shake-memory;
+}
+
+
+@keyframes tada-memory {
+  from {
+    transform: scale3d(1, 1, 1) rotateY(180deg);
+  }
+
+  10%,
+  20% {
+    transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg) rotateY(180deg);
+  }
+
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg) rotateY(180deg);
+  }
+
+  40%,
+  60%,
+  80% {
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg) rotateY(180deg);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1) rotateY(180deg);
+  }
+}
+
+.card.tada.is-correct {
+  animation-name: tada-memory;
+}

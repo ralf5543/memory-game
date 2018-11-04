@@ -568,3 +568,95 @@ body {
   transition: background-color .3s; }
   .modal__btn:hover {
     background-color: #0288db; }
+
+@-webkit-keyframes shake-memory {
+  from,
+  to {
+    -webkit-transform: translate3d(0, 0, 0) rotateY(180deg);
+            transform: translate3d(0, 0, 0) rotateY(180deg); }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: translate3d(-10px, 0, 0) rotateY(180deg);
+            transform: translate3d(-10px, 0, 0) rotateY(180deg); }
+  20%,
+  40%,
+  60%,
+  80% {
+    -webkit-transform: translate3d(10px, 0, 0) rotateY(180deg);
+            transform: translate3d(10px, 0, 0) rotateY(180deg); } }
+
+@keyframes shake-memory {
+  from,
+  to {
+    -webkit-transform: translate3d(0, 0, 0) rotateY(180deg);
+            transform: translate3d(0, 0, 0) rotateY(180deg); }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: translate3d(-10px, 0, 0) rotateY(180deg);
+            transform: translate3d(-10px, 0, 0) rotateY(180deg); }
+  20%,
+  40%,
+  60%,
+  80% {
+    -webkit-transform: translate3d(10px, 0, 0) rotateY(180deg);
+            transform: translate3d(10px, 0, 0) rotateY(180deg); } }
+
+.card.shake.is-wrong {
+  -webkit-animation-name: shake-memory;
+          animation-name: shake-memory; }
+
+@-webkit-keyframes tada-memory {
+  from {
+    -webkit-transform: scale3d(1, 1, 1) rotateY(180deg);
+            transform: scale3d(1, 1, 1) rotateY(180deg); }
+  10%,
+  20% {
+    -webkit-transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg) rotateY(180deg);
+            transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg) rotateY(180deg); }
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg) rotateY(180deg);
+            transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg) rotateY(180deg); }
+  40%,
+  60%,
+  80% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg) rotateY(180deg);
+            transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg) rotateY(180deg); }
+  to {
+    -webkit-transform: scale3d(1, 1, 1) rotateY(180deg);
+            transform: scale3d(1, 1, 1) rotateY(180deg); } }
+
+@keyframes tada-memory {
+  from {
+    -webkit-transform: scale3d(1, 1, 1) rotateY(180deg);
+            transform: scale3d(1, 1, 1) rotateY(180deg); }
+  10%,
+  20% {
+    -webkit-transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg) rotateY(180deg);
+            transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg) rotateY(180deg); }
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg) rotateY(180deg);
+            transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg) rotateY(180deg); }
+  40%,
+  60%,
+  80% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg) rotateY(180deg);
+            transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg) rotateY(180deg); }
+  to {
+    -webkit-transform: scale3d(1, 1, 1) rotateY(180deg);
+            transform: scale3d(1, 1, 1) rotateY(180deg); } }
+
+.card.tada.is-correct {
+  -webkit-animation-name: tada-memory;
+          animation-name: tada-memory; }
